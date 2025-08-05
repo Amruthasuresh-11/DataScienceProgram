@@ -1,0 +1,20 @@
+import numpy as np
+rows=int(input("enter the number of rows"))
+cols=int(input("enter the number of col"))
+matrix=[]
+print("enter the matrix element row by row")
+for i in range(rows):
+    row=[]
+    for j in range(cols):
+        row.append(int(input()))
+    matrix.append(row)
+print("The 2D matrix:")
+for i in range(rows):
+    for j in range(cols):
+        print(matrix[i][j],end=" ")
+    print()
+matrixA=np.array(matrix)
+U,s,Vt=np.linalg.svd(matrixA)
+print("U:",U)
+print("singular values:",s)
+print("Vt:",Vt)
