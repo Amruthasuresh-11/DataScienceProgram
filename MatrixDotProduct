@@ -1,0 +1,37 @@
+import numpy as np
+row1=int(input("enter the number of rows in 1st matrix"))
+col1=int(input("enter the number of col in 1st matrix"))
+matrix_A=[]
+print("enter the matrix element row by row of 1st matrix")
+for i in range(row1):
+    row=[]
+    for j in range(col1):
+        row.append(int(input()))
+    matrix_A.append(row)
+row2=int(input("enter the number of rows in 2nd matrix"))
+col2=int(input("enter the number of col in 2nd matrix"))
+matrix_B=[]
+print("enter the matrix element row by row of 2nd matrix")
+for i in range(row2):
+    row=[]
+    for j in range(col2):
+        row.append(int(input()))
+    matrix_B.append(row)
+print("The 1st matrix:")
+for i in range(row1):
+    for j in range(col1):
+        print(matrix_A[i][j],end=" ")
+    print()
+print("The 2nd matrix:")
+for i in range(row2):
+    for j in range(col2):
+        print(matrix_B[i][j],end=" ")
+    print()
+if col1!=row2:
+    print("the no.of col of 1st matrix and no.of rows of 2nd matrix shoul be smae for dot product")
+else:
+    np_matrix_A=np.array(matrix_A)
+    np_matrix_B=np.array(matrix_B)
+    dot_matrix=np.dot(np_matrix_A,np_matrix_B)
+    print("the dot product of the 2 matrix are:")
+    print(dot_matrix)
