@@ -1,0 +1,19 @@
+import numpy as np
+rows=int(input("enter the number of rows"))
+cols=int(input("enter the number of col"))
+matrix=[]
+print("enter the matrix element row by row")
+for i in range(rows):
+    row=[]
+    for j in range(cols):
+        row.append(int(input()))
+    matrix.append(row)
+print("The 2D matrix:")
+for i in range(rows):
+    for j in range(cols):
+        print(matrix[i][j],end=" ")
+    print()
+print("inverse of the matrix:")
+matrixA=np.array(matrix)
+inverse=np.linalg.inv(matrixA)
+print(inverse)
